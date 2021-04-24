@@ -20,4 +20,4 @@ const addStudent = (obj) => new Promise((resolve, reject) => {
     }).catch((error) => reject(error));
 });
 
-export default addStudent;
+export { addStudent, getStudents };

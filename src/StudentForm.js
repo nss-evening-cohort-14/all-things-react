@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
-import addStudent from './helpers/data/studentData';
+import PropTypes from 'prop-types';
+import { addStudent } from './helpers/data/studentData';
 
-export default function StudentForm({ formTitle }) {
+const StudentForm = ({ formTitle }) => {
   const [student, setStudent] = useState({
     name: '',
     teacher: '',
@@ -33,7 +34,7 @@ export default function StudentForm({ formTitle }) {
         <label>Name:</label>
         <input
           name='name'
-          value={student.name.value}
+          value={student.name}
           type='text'
           placeholder='Enter a Student Name'
           onChange={handleInputChange}
@@ -44,7 +45,7 @@ export default function StudentForm({ formTitle }) {
         <label>Teacher:</label>
         <input
           name='teacher'
-          value={student.teacher.value}
+          value={student.teacher}
           type='text'
           placeholder='Enter a Teacher Name'
           onChange={handleInputChange}
@@ -55,7 +56,7 @@ export default function StudentForm({ formTitle }) {
       <label>Grade:</label>
       <input
         name='grade'
-        value={student.grade.value}
+        value={student.grade}
         type='number'
         placeholder='Enter a Grade'
         onChange={handleInputChange}
@@ -66,4 +67,10 @@ export default function StudentForm({ formTitle }) {
       </form>
     </div>
   );
-}
+};
+
+StudentForm.propTypes = {
+  formTitle: PropTypes.string.isRequired
+};
+
+export default StudentForm;
