@@ -1,7 +1,23 @@
-# React Template
+# All Things React
 
-**Use this template to get up and running quickly on projects.**
+## Use this repo
+You will be able to pull any new code we do in class by running:
 
-This is just like the webpack template. Use it, create the repo, connect it to your local and `npm i`.
+```bash
+$ git clone git@github.com:nss-evening-cohort-14/all-things-react.git
+$ cd all-things-react
+$ npm install
+$ npm start
+```
 
-- [Steps to deploy](https://github.com/nss-nightclass-projects/REACT-Deployment-Netlify)
+To get new code run:
+`git pull origin main`
+
+We will be using this repo for all the code we do in class for React until we start InstaSham.
+
+- Forms
+- PropTypes
+- Components
+- Passing Props
+- React Rounter Dom
+- etc.

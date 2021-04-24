@@ -6,13 +6,14 @@ const StudentForm = ({ formTitle }) => {
   const [student, setStudent] = useState({
     name: '',
     teacher: '',
-    grade: 0
+    grade: 0,
   });
 
   const handleInputChange = (e) => {
     setStudent((prevState) => ({
       ...prevState,
-      [e.target.name]: e.target.name === 'grade' ? Number(e.target.value) : e.target.value
+      [e.target.name]:
+        e.target.name === 'grade' ? Number(e.target.value) : e.target.value,
     }));
   };
 
@@ -63,7 +64,7 @@ const StudentForm = ({ formTitle }) => {
       />
       </div>
 
-      <button type='submit'>Submit</button>
+        <button type='submit'>Submit</button>
       </form>
     </div>
   );
