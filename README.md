@@ -1,7 +1,10 @@
-# React Template
+# All Things React
 
-**Use this template to get up and running quickly on projects.**
+We will be using this repo for all the code we do in class for React until we start InstaSham.
 
-This is just like the webpack template. Use it, create the repo, connect it to your local and `npm i`.
-
-- [Steps to deploy](https://github.com/nss-nightclass-projects/REACT-Deployment-Netlify)
+- Forms
+- PropTypes
+- Components
+- Passing Props
+- React Rounter Dom
+- etc.
