@@ -1,14 +1,7 @@
-<<<<<<< HEAD
-import React, { useState, useEffect } from 'react';
-import StudentForm from '../StudentForm';
-import StudentCard from '../components/StudentCard';
-import { getStudents } from '../helpers/data/studentData';
-=======
 import React, { useEffect, useState } from 'react';
 import StudentCard from '../components/StudentCard';
 import { getStudents } from '../helpers/data/studentData';
 import StudentForm from '../StudentForm';
->>>>>>> 7245a86b59dac7507c6791802ae0cb72715dfd54
 import './App.scss';
 
 function App() {
