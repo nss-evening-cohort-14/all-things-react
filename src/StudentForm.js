@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import addStudent from './helpers/data/studentData';
 
-export default function StudentForm() {
+export default function StudentForm({ formTitle }) {
   const [student, setStudent] = useState({
     name: '',
     teacher: '',
@@ -28,7 +28,7 @@ export default function StudentForm() {
         autoComplete='off'
         onSubmit={handleSubmit}
       >
-      <h2>New Student</h2>
+      <h2>{formTitle}</h2>
       <div>
         <label>Name:</label>
         <input
