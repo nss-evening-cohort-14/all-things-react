@@ -12,7 +12,7 @@ function App() {
 
   return (
     <>
-      <StudentForm formTitle='Form Title'/>
+      <StudentForm formTitle='Add Student'/>
       <hr/>
       <div className="card-container">
         {students.map((studentInfo) => (
