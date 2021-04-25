@@ -1,8 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import StudentCard from '../components/StudentCard';
 import { getStudents } from '../helpers/data/studentData';
-import StudentForm from '../StudentForm';
-import './App.scss';
+import StudentForm from '../components/StudentForm';
 
 function App() {
   const [students, setStudents] = useState([]);
@@ -12,19 +11,21 @@ function App() {
   }, []);
 
   return (
-    <div className='App'>
+    <>
       <StudentForm formTitle='Form Title'/>
       <hr/>
-      {students.map((studentInfo) => (
-        <StudentCard
-          key={studentInfo.firebaseKey}
-          name={studentInfo.name}
-          teacher={studentInfo.teacher}
-          grade={Number(studentInfo.grade)}
-          handleClick={() => console.warn(`${studentInfo.name}'s teacher is ${studentInfo.teacher}`)}
-        />
-      ))}
-    </div>
+      <div className="card-container">
+        {students.map((studentInfo) => (
+          <StudentCard
+            key={studentInfo.firebaseKey}
+            name={studentInfo.name}
+            teacher={studentInfo.teacher}
+            grade={Number(studentInfo.grade)}
+            handleClick={() => console.warn(`${studentInfo.name}'s teacher is ${studentInfo.teacher}`)}
+          />
+        ))}
+      </div>
+    </>
   );
 }
 

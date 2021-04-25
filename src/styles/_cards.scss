@@ -1,0 +1,13 @@
+.card-container {
+  display: flex;
+  flex-flow: row wrap;
+
+  .card {
+    width: 300px;
+    margin: 5px;
+  }
+
+  .card-body {
+    flex: none;
+  }
+}
