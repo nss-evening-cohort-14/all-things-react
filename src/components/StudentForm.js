@@ -79,7 +79,7 @@ const StudentForm = ({ formTitle, setStudents, ...args }) => {
 
 StudentForm.propTypes = {
   formTitle: PropTypes.string.isRequired,
-  setStudents: PropTypes.func,
+  setStudents: PropTypes.func.isRequired,
   name: PropTypes.string,
   teacher: PropTypes.string,
   grade: PropTypes.number,
