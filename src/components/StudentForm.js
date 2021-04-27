@@ -3,13 +3,21 @@ import {
   Button, Form, FormGroup, Label, Input
 } from 'reactstrap';
 import PropTypes from 'prop-types';
-import { addStudent } from '../helpers/data/studentData';
+import { addStudent, updateStudent } from '../helpers/data/studentData';
 
-const StudentForm = ({ formTitle, setStudents }) => {
+const StudentForm = ({
+  formTitle,
+  setStudents,
+  name,
+  teacher,
+  grade,
+  firebaseKey
+}) => {
   const [student, setStudent] = useState({
-    name: '',
-    teacher: '',
-    grade: 0,
+    name: name || '',
+    teacher: teacher || '',
+    grade: grade || 0,
+    firebaseKey: firebaseKey || null
   });
 
   const handleInputChange = (e) => {
@@ -22,8 +30,12 @@ const StudentForm = ({ formTitle, setStudents }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // add a student to firebase
-    addStudent(student).then((studentArray) => setStudents(studentArray));
+    if (student.firebaseKey) {
+      // make call to updateStudent to update student and rerender the DOM
+      updateStudent(student).then((studentArray) => setStudents(studentArray));
+    } else {
+      addStudent(student).then((studentArray) => setStudents(studentArray));
+    }
   };
 
   return (
@@ -74,7 +86,11 @@ const StudentForm = ({ formTitle, setStudents }) => {
 
 StudentForm.propTypes = {
   formTitle: PropTypes.string.isRequired,
-  setStudents: PropTypes.func
+  setStudents: PropTypes.func,
+  name: PropTypes.string,
+  teacher: PropTypes.string,
+  grade: PropTypes.number,
+  firebaseKey: PropTypes.string
 };
 
 export default StudentForm;
