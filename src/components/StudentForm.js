@@ -5,19 +5,12 @@ import {
 import PropTypes from 'prop-types';
 import { addStudent, updateStudent } from '../helpers/data/studentData';
 
-const StudentForm = ({
-  formTitle,
-  setStudents,
-  name,
-  teacher,
-  grade,
-  firebaseKey
-}) => {
+const StudentForm = ({ formTitle, setStudents, ...args }) => {
   const [student, setStudent] = useState({
-    name: name || '',
-    teacher: teacher || '',
-    grade: grade || 0,
-    firebaseKey: firebaseKey || null
+    name: args?.name || '',
+    teacher: args?.teacher || '',
+    grade: args?.grade || 0,
+    firebaseKey: args?.firebaseKey || null
   });
 
   const handleInputChange = (e) => {
