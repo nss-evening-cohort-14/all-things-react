@@ -5,7 +5,7 @@ import {
 import PropTypes from 'prop-types';
 import { addStudent } from '../helpers/data/studentData';
 
-const StudentForm = ({ formTitle }) => {
+const StudentForm = ({ formTitle, setStudents }) => {
   const [student, setStudent] = useState({
     name: '',
     teacher: '',
@@ -23,7 +23,7 @@ const StudentForm = ({ formTitle }) => {
   const handleSubmit = (e) => {
     e.preventDefault();
     // add a student to firebase
-    addStudent(student);
+    addStudent(student).then((studentArray) => setStudents(studentArray));
   };
 
   return (
@@ -74,6 +74,7 @@ const StudentForm = ({ formTitle }) => {
 
 StudentForm.propTypes = {
   formTitle: PropTypes.string.isRequired,
+  setStudents: PropTypes.func
 };
 
 export default StudentForm;

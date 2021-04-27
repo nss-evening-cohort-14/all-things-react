@@ -20,4 +20,10 @@ const addStudent = (obj) => new Promise((resolve, reject) => {
     }).catch((error) => reject(error));
 });
 
-export { addStudent, getStudents };
+const deleteStudent = (firebaseKey) => new Promise((resolve, reject) => {
+  axios.delete(`${dbUrl}/students/${firebaseKey}.json`)
+    .then(() => getStudents().then((studentArray) => resolve(studentArray)))
+    .catch((error) => reject(error));
+});
+
+export { addStudent, getStudents, deleteStudent };
