@@ -7,7 +7,7 @@ function App() {
   const [students, setStudents] = useState([]);
 
   useEffect(() => {
-    getStudents().then((resp) => setStudents(resp));
+    getStudents().then(setStudents);
   }, []);
 
   return (

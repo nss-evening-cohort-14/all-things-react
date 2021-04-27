@@ -32,9 +32,11 @@ const StudentForm = ({
     e.preventDefault();
     if (student.firebaseKey) {
       // make call to updateStudent to update student and rerender the DOM
-      updateStudent(student).then((studentArray) => setStudents(studentArray));
+      updateStudent(student).then(setStudents); // this is the same as below, just shorthand.
+      // updateStudent(student).then((studentArray) => setStudents(studentArray));
     } else {
-      addStudent(student).then((studentArray) => setStudents(studentArray));
+      addStudent(student).then(setStudents); // this is the same as below, just shorthand.
+      // addStudent(student).then((studentArray) => setStudents(studentArray));
     }
   };
 

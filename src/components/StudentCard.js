@@ -21,7 +21,7 @@ const StudentCard = ({
     switch (type) {
       case 'delete':
         deleteStudent(firebaseKey)
-          .then((studentArray) => setStudents(studentArray));
+          .then(setStudents);
         break;
       case 'edit':
         setEditing((prevState) => !prevState);
