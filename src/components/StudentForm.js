@@ -37,6 +37,14 @@ const StudentForm = ({
     } else {
       addStudent(student).then(setStudents); // this is the same as below, just shorthand.
       // addStudent(student).then((studentArray) => setStudents(studentArray));
+
+      // clear inputs
+      setStudent({
+        name: '',
+        teacher: '',
+        grade: 0,
+        firebaseKey: null
+      });
     }
   };
 
