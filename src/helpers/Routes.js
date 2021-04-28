@@ -15,7 +15,7 @@ export default function Routes({ students, setStudents }) {
           component={() => <Students students={students} setStudents={setStudents} />}
         />
         <Route
-          path='/add-students'
+          path='/add-student'
           component={() => <AddStudent setStudents={setStudents} />}
         />
       </Switch>
