@@ -4,7 +4,6 @@ import {
   Collapse,
   Navbar,
   NavbarToggler,
-  NavbarBrand,
   Nav,
   NavItem,
 } from 'reactstrap';
@@ -17,12 +16,12 @@ const NavBar = () => {
   return (
     <div>
       <Navbar color="light" light expand="md">
-        <NavbarBrand href="/">React</NavbarBrand>
+        <Link className="navbar-brand" to="/">React</Link>
         <NavbarToggler onClick={toggle} />
         <Collapse isOpen={isOpen} navbar>
           <Nav className="mr-auto" navbar>
             <NavItem>
-              <Link className="nav-link" to="/add-student">Add Students</Link>
+              <Link className="nav-link" to="/add-student">Add Student</Link>
             </NavItem>
             <NavItem>
               <Link className="nav-link" to="/students">Student Cards</Link>
