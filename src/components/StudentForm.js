@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useHistory } from 'react-router-dom';
 import {
   Button, Form, FormGroup, Label, Input
 } from 'reactstrap';
@@ -19,6 +20,7 @@ const StudentForm = ({
     grade: grade || 0,
     firebaseKey: firebaseKey || null
   });
+  const history = useHistory();
 
   const handleInputChange = (e) => {
     setStudent((prevState) => ({
@@ -31,14 +33,13 @@ const StudentForm = ({
   const handleSubmit = (e) => {
     e.preventDefault();
     if (student.firebaseKey) {
-      // make call to updateStudent to update student and rerender the DOM
-      updateStudent(student).then(setStudents); // this is the same as below, just shorthand.
-      // updateStudent(student).then((studentArray) => setStudents(studentArray));
+      updateStudent(student).then(setStudents);
     } else {
-      addStudent(student).then(setStudents); // this is the same as below, just shorthand.
-      // addStudent(student).then((studentArray) => setStudents(studentArray));
+      addStudent(student).then((response) => {
+        setStudents(response);
+        history.push('/students');
+      });
 
-      // clear inputs
       setStudent({
         name: '',
         teacher: '',
