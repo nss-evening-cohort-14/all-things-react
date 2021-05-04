@@ -13,6 +13,7 @@ function App() {
     getStudents().then(setStudents);
   }, []);
 
+  // SETTING THE USER
   useEffect(() => {
     firebase.auth().onAuthStateChanged((authed) => {
       if (authed) {
@@ -34,6 +35,7 @@ function App() {
     <>
       <NavBar user={user} />
       <Routes
+        user={user}
         students={students}
         setStudents={setStudents}
       />
