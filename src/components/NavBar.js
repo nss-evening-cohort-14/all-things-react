@@ -35,7 +35,6 @@ const NavBar = ({ user }) => {
         <Collapse isOpen={isOpen} navbar>
           <Nav className="mr-auto" navbar>
             { user && authenticated()}
-            <NavItem>
               {
                 user !== null
                 && <NavItem>
@@ -46,7 +45,6 @@ const NavBar = ({ user }) => {
                   }
                 </NavItem>
               }
-            </NavItem>
           </Nav>
         </Collapse>
       </Navbar>
