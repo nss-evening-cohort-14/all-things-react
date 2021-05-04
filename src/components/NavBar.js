@@ -35,16 +35,16 @@ const NavBar = ({ user }) => {
         <Collapse isOpen={isOpen} navbar>
           <Nav className="mr-auto" navbar>
             { user && authenticated()}
-              {
-                user !== null
-                && <NavItem>
-                  {
-                    user
-                      ? <Button color='danger' onClick={signOutUser}>Sign Out</Button>
-                      : <Button color='info' onClick={signInUser}>Sign In</Button>
-                  }
-                </NavItem>
-              }
+            {
+              user !== null
+              && <NavItem>
+                {
+                  user
+                    ? <Button color='danger' onClick={signOutUser}>Sign Out</Button>
+                    : <Button color='info' onClick={signInUser}>Sign In</Button>
+                }
+              </NavItem>
+            }
           </Nav>
         </Collapse>
       </Navbar>
